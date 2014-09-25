@@ -1,0 +1,449 @@
+@charset "utf-8";
+
+@background-color: #F3F3F4;
+@font-color: #858585;
+@green: #5FBA47;
+@orange: #FCB040;
+@person-background: #F1592A;
+
+/* Application Styles */
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    position: relative;
+    background: @background-color;
+    color: @font-color;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: @background-color url( "/images/gotclocked_logo.png" ) no-repeat center;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    z-index: 999999;
+}
+
+.go-to-app {
+    width: 80%;
+    height: 25%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    left: 0; bottom: 200px; right: 0;
+    z-index: 99999;
+
+    a {
+        display: block;
+        width: 20%;
+        height: 50px;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 50px;
+        margin: 0 auto;
+        background: @green;
+        border-radius: 7px;
+
+        &:hover {
+            background: @orange;
+        }
+    }
+
+    p {
+        display: block;
+        width: 100%;
+        height: 50px;
+        font-size: 40px;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 50px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+}
+
+.clearfix:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+header {
+    display: block;
+    margin-bottom: 5px;
+
+    .row {
+
+        img {
+            width: 100%;
+        }
+
+        p.tag-line {
+            font-size: 10px;
+            margin: 0;
+            padding: 5px 0;
+            border-bottom: 1px solid #858585;
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            color: rgb(185, 185, 185);
+        }
+    }
+}
+
+span.vokal-tag {
+    display: block;
+    color: rgb(185, 185, 185);
+    text-align: center;
+    margin: 30px 0 20px 0;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    a {
+        display: inline;
+        width: auto;
+        height: auto;
+        color: @green;
+        line-height: auto;
+        text-align: left;
+        margin: auto;
+        background: none;
+
+        &:hover {
+            background: none;
+            text-decoration: underline;
+        }
+    }
+}
+
+.row-container {
+    display: block;
+    width: 100%;
+
+    .row {
+        display: block;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px 20px 5px 20px;
+
+        p {
+            font-size: 15px;
+
+            &.timed-message {
+                line-height: 18px;
+            }
+        }
+
+        .dollar-counter {
+            position: relative;
+
+            #count-container {
+                position: relative;
+                font-size: 40px;
+                color: @green;
+                padding-bottom: 10px;
+                border-bottom: 1px solid @font-color;
+
+                &.stopped {
+                    color: @font-color;
+                }
+            }
+
+            span {
+                position: absolute;
+                right: 0;
+                bottom: -15px;
+                font-size: 11px;
+            }
+        }
+
+        .time-wrapper {
+            position: relative;
+            margin-bottom: 40px;
+
+            #elapsed-time {
+                font-size: 36px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid @font-color;
+
+                &.stopped {
+                    color: @orange;
+                }
+            }
+
+            span {
+                position: absolute;
+                right: 0;
+                bottom: -15px;
+                font-size: 11px;
+            }
+        }
+
+        .entries {
+            width: 300px;
+            margin: 0 auto;
+            padding: 5%;
+            font-size: 12px;
+            color: #FFFFFF;
+
+            li {
+                position: relative;
+                float: left;
+                width: 42px;
+                height: 42px;
+                margin: 0 10px 10px 0;
+                text-align: center;
+                line-height: 42px;
+                background: @person-background url("/images/rate-x.png") no-repeat bottom center;
+                background-size: 8px;
+                background-position: 17px 30px;
+                border-radius: 21px;
+                cursor: pointer;
+            }
+        }
+
+        #rate-form {
+            position: relative;
+            width: 286px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+
+            input {
+                padding: 5px;
+                border: 0;
+                background: @background-color;
+                border-bottom: 1px solid @font-color;
+                text-align: center;
+            }
+
+            span {
+                position: absolute;
+                right: 43px;
+                bottom: -15px;
+                font-size: 11px;
+            }
+        }
+
+        .disabled {
+            opacity: .3;
+        }
+
+        button.stop-timer.stopped,
+        img.money-top-icon.stopped,
+        img.time-icon.stopped,
+        p.stopped,
+        button.stopped {
+            display: none;
+        }
+
+        img.people-icon,
+        img.time-icon,
+        img.money-top-icon {
+            display: block;
+            width: 23px;
+            height: 23px;
+            margin: 20px auto;
+        }
+
+        img.money-icon {
+            float: left;
+            width: 23px;
+            height: 23px;
+            margin-top: 5px;
+        }
+
+        button.add-btn {
+            width: 35px;
+            height: 35px;
+            border: 0;
+            background: url( "/images/ic_add.png" ) no-repeat;
+            background-size: cover;
+            text-indent: 999999px;
+        }
+
+        .paused-controls {
+            position: relative;
+            max-width: 302px;
+            margin: 0 auto;
+        }
+
+        button.start-timer,
+        button.stop-timer {
+            display: block;
+            width: 123px;
+            height: 123px;
+            margin: 0 auto;
+            border: 0;
+            text-indent: 99999px;
+            background: url( "/images/ic_control_start.png" ) no-repeat;
+            background-size: cover;
+        }
+
+        button.reset-timer,
+        button.start-timer-resume {
+            display: block;
+            float: left;
+            width: 123px;
+            height: 123px;
+            margin: 0 auto;
+            border: 0;
+            text-indent: 99999px;
+        }
+
+        button.reset-timer {
+            float: right;
+            background: url( "/images/ic_control_reset.png" ) no-repeat;
+            background-size: cover;
+        }
+
+        button.stop-timer {
+            background: url( "/images/ic_control_pause.png" ) no-repeat;
+            background-size: cover;
+        }
+
+        button.start-timer-resume {
+            background: url( "/images/ic_control_start.png" ) no-repeat;
+            background-size: cover;
+        }
+
+        button.email-time {
+            position: absolute;
+            left: 50%;
+            width: 45px;
+            height: 45px;
+            margin-left: -22px;
+            bottom: -10px;
+            border: 0;
+            text-indent: 99999px;
+            background: url( "/images/ic_mail.png" ) no-repeat;
+            background-size: cover;
+        }
+
+        img.email-icon {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .time-elapsed,
+        .money-spent {
+            display: block;
+            width: 80%;
+            text-align: center;
+            letter-spacing: 2px;
+            margin: 20px auto;
+        }
+
+        .time-elapsed {
+            font-size: 35px;
+            background: url( "/images/ic_clock.png" ) no-repeat left;
+            background-size: 20px;
+        }
+
+        .money-spent {
+            font-size: 45px;
+            font-weight: bold;
+            background: url( "/images/ic_money.png" ) no-repeat left;
+            background-size: 20px;
+        }
+
+        #email-form {
+            width: 100%;
+            margin: 0 auto;
+
+            .form-wrapper {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            span,
+            input,
+            button {
+                float: left;
+            }
+
+            span {
+                display: block;
+                width: 30px;
+                height: 30px;
+                background: url( "/images/ic_close_input.png" ) no-repeat;
+                background-size: cover;
+                cursor: pointer;
+            }
+
+            input {
+                width: 63%;
+                font-size: 15px;
+                padding: 5px;
+                border: 0;
+                background: @background-color;
+                border-bottom: 1px solid @font-color;
+                text-align: center;
+            }
+
+            button {
+                width: 50px;
+                height: 38px;
+                color: #FFFFFF;
+                font-size: 12px;
+                text-align: center;
+                line-height: 35px;
+                background: @green;
+                border: 0;
+                border-radius: 7px;
+                margin-left: 10px;
+
+                &:hover {
+                    background: @orange;
+                }
+            }
+        }
+
+        &.sent {
+             img {
+                display: block;
+                width: 122px;
+                height: 122px;
+                margin: 0 auto;
+                margin-top: 20px;
+             }
+
+             button {
+                float: none;
+                margin: 0 auto;
+                margin-top: 40px;
+             }
+        }
+
+    }
+}
+
+@media screen and ( max-width: 480px ) {
+
+    header .row {
+
+        p.tag-line {
+            font-size: 7px;
+        }
+
+    }
+
+}

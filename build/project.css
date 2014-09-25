@@ -1,0 +1,373 @@
+@charset "utf-8";
+/* Application Styles */
+* {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  background: #f3f3f4;
+  color: #858585;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f3f3f4 url("images/gotclocked_logo.png") no-repeat center;
+  -o-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  z-index: 999999;
+}
+.go-to-app {
+  width: 80%;
+  height: 25%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  bottom: 200px;
+  right: 0;
+  z-index: 99999;
+}
+.go-to-app a {
+  display: block;
+  width: 20%;
+  height: 50px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 auto;
+  background: #5fba47;
+  border-radius: 7px;
+}
+.go-to-app a:hover {
+  background: #fcb040;
+}
+.go-to-app p {
+  display: block;
+  width: 100%;
+  height: 50px;
+  font-size: 40px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+header {
+  display: block;
+  margin-bottom: 5px;
+}
+header .row img {
+  width: 100%;
+}
+header .row p.tag-line {
+  font-size: 10px;
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #858585;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  color: #b9b9b9;
+}
+span.vokal-tag {
+  display: block;
+  color: #b9b9b9;
+  text-align: center;
+  margin: 30px 0 20px 0;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+span.vokal-tag a {
+  display: inline;
+  width: auto;
+  height: auto;
+  color: #5fba47;
+  line-height: auto;
+  text-align: left;
+  margin: auto;
+  background: none;
+}
+span.vokal-tag a:hover {
+  background: none;
+  text-decoration: underline;
+}
+.row-container {
+  display: block;
+  width: 100%;
+}
+.row-container .row {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 20px 5px 20px;
+}
+.row-container .row p {
+  font-size: 15px;
+}
+.row-container .row p.timed-message {
+  line-height: 18px;
+}
+.row-container .row .dollar-counter {
+  position: relative;
+}
+.row-container .row .dollar-counter #count-container {
+  position: relative;
+  font-size: 40px;
+  color: #5fba47;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #858585;
+}
+.row-container .row .dollar-counter #count-container.stopped {
+  color: #858585;
+}
+.row-container .row .dollar-counter span {
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+  font-size: 11px;
+}
+.row-container .row .time-wrapper {
+  position: relative;
+  margin-bottom: 40px;
+}
+.row-container .row .time-wrapper #elapsed-time {
+  font-size: 36px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #858585;
+}
+.row-container .row .time-wrapper #elapsed-time.stopped {
+  color: #fcb040;
+}
+.row-container .row .time-wrapper span {
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+  font-size: 11px;
+}
+.row-container .row .entries {
+  width: 300px;
+  margin: 0 auto;
+  padding: 5%;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+.row-container .row .entries li {
+  position: relative;
+  float: left;
+  width: 42px;
+  height: 42px;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 42px;
+  background: #f1592a url("images/rate-x.png") no-repeat bottom center;
+  background-size: 8px;
+  background-position: 17px 30px;
+  border-radius: 21px;
+  cursor: pointer;
+}
+.row-container .row #rate-form {
+  position: relative;
+  width: 286px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.row-container .row #rate-form input {
+  padding: 5px;
+  border: 0;
+  background: #f3f3f4;
+  border-bottom: 1px solid #858585;
+  text-align: center;
+}
+.row-container .row #rate-form span {
+  position: absolute;
+  right: 43px;
+  bottom: -15px;
+  font-size: 11px;
+}
+.row-container .row .disabled {
+  opacity: .3;
+}
+.row-container .row button.stop-timer.stopped,
+.row-container .row img.money-top-icon.stopped,
+.row-container .row img.time-icon.stopped,
+.row-container .row p.stopped,
+.row-container .row button.stopped {
+  display: none;
+}
+.row-container .row img.people-icon,
+.row-container .row img.time-icon,
+.row-container .row img.money-top-icon {
+  display: block;
+  width: 23px;
+  height: 23px;
+  margin: 20px auto;
+}
+.row-container .row img.money-icon {
+  float: left;
+  width: 23px;
+  height: 23px;
+  margin-top: 5px;
+}
+.row-container .row button.add-btn {
+  width: 35px;
+  height: 35px;
+  border: 0;
+  background: url("images/ic_add.png") no-repeat;
+  background-size: cover;
+  text-indent: 999999px;
+}
+.row-container .row .paused-controls {
+  position: relative;
+  max-width: 302px;
+  margin: 0 auto;
+}
+.row-container .row button.start-timer,
+.row-container .row button.stop-timer {
+  display: block;
+  width: 123px;
+  height: 123px;
+  margin: 0 auto;
+  border: 0;
+  text-indent: 99999px;
+  background: url("images/ic_control_start.png") no-repeat;
+  background-size: cover;
+}
+.row-container .row button.reset-timer,
+.row-container .row button.start-timer-resume {
+  display: block;
+  float: left;
+  width: 123px;
+  height: 123px;
+  margin: 0 auto;
+  border: 0;
+  text-indent: 99999px;
+}
+.row-container .row button.reset-timer {
+  float: right;
+  background: url("images/ic_control_reset.png") no-repeat;
+  background-size: cover;
+}
+.row-container .row button.stop-timer {
+  background: url("images/ic_control_pause.png") no-repeat;
+  background-size: cover;
+}
+.row-container .row button.start-timer-resume {
+  background: url("images/ic_control_start.png") no-repeat;
+  background-size: cover;
+}
+.row-container .row button.email-time {
+  position: absolute;
+  left: 50%;
+  width: 45px;
+  height: 45px;
+  margin-left: -22px;
+  bottom: -10px;
+  border: 0;
+  text-indent: 99999px;
+  background: url("images/ic_mail.png") no-repeat;
+  background-size: cover;
+}
+.row-container .row img.email-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.row-container .row .time-elapsed,
+.row-container .row .money-spent {
+  display: block;
+  width: 80%;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 20px auto;
+}
+.row-container .row .time-elapsed {
+  font-size: 35px;
+  background: url("images/ic_clock.png") no-repeat left;
+  background-size: 20px;
+}
+.row-container .row .money-spent {
+  font-size: 45px;
+  font-weight: bold;
+  background: url("images/ic_money.png") no-repeat left;
+  background-size: 20px;
+}
+.row-container .row #email-form {
+  width: 100%;
+  margin: 0 auto;
+}
+.row-container .row #email-form .form-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.row-container .row #email-form span,
+.row-container .row #email-form input,
+.row-container .row #email-form button {
+  float: left;
+}
+.row-container .row #email-form span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("images/ic_close_input.png") no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+.row-container .row #email-form input {
+  width: 63%;
+  font-size: 15px;
+  padding: 5px;
+  border: 0;
+  background: #f3f3f4;
+  border-bottom: 1px solid #858585;
+  text-align: center;
+}
+.row-container .row #email-form button {
+  width: 50px;
+  height: 38px;
+  color: #FFFFFF;
+  font-size: 12px;
+  text-align: center;
+  line-height: 35px;
+  background: #5fba47;
+  border: 0;
+  border-radius: 7px;
+  margin-left: 10px;
+}
+.row-container .row #email-form button:hover {
+  background: #fcb040;
+}
+.row-container .row.sent img {
+  display: block;
+  width: 122px;
+  height: 122px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.row-container .row.sent button {
+  float: none;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+@media screen and (max-width: 480px) {
+  header .row p.tag-line {
+    font-size: 7px;
+  }
+}

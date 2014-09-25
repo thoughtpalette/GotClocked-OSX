@@ -1,0 +1,187 @@
+@charset "utf-8";
+
+/* Reset Styles */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	font-size: 100%;
+	font-weight: normal;
+	font-style: normal;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q {	quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+a { text-decoration: none; }
+
+/* Normalize Styles */
+
+html { min-height: 100%; font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
+audio:not([controls]) { display: none; height: 0; }
+[hidden], template { display: none; }
+a { background: transparent; }
+a:active, a:hover { outline: 0; }
+b, strong { font-weight: bold; }
+i, em { font-style: italic; }
+small { font-size: 80%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+svg:not(:root) { overflow: hidden; }
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+pre { overflow: auto; }
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+button, input, optgroup, select, textarea { color: inherit; font: inherit; }
+button { overflow: visible; }
+button, select { text-transform: none; }
+button, html input[type="button"],
+input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+button[disabled], html input[disabled] { cursor: default; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+input { line-height: normal; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { height: auto; }
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+textarea { overflow: auto; }
+optgroup { font-weight: bold; }
+
+/* If making webviews for native app:
+
+input, select, textarea, a, button {
+	-webkit-tap-highlight-color: rgba(255,255,255,0); 
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+}
+
+*/
+@charset "utf-8";
+
+/* VOKAL Styles */
+
+.vokal-timepicker {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	max-height: 144px;
+	margin-top: 2px;
+	overflow: auto;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 3px 0 rgba(0,0,0,0.2);
+}
+.vokal-timepicker > div {
+	padding: 6px;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	cursor: default;
+}
+.vokal-timepicker > div:hover { background-color: #EEEEEE; }
+
+.vokal-datepicker {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+	z-index: 1;
+	width: 172px;
+	margin-top: 2px;
+	padding: 2px 0px 0px 2px;
+	overflow: hidden;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 3px 0 rgba(0,0,0,0.2);
+}
+.vokal-datepicker .month-name {
+	clear: left;
+	padding: 3px 0px;
+	margin: 0px 2px 2px 0px;
+	background-color: #EEEEEE;
+	text-align: center;
+	font-size: 12px;
+}
+.vokal-datepicker .month-prev,
+.vokal-datepicker .month-next {
+	position: absolute;
+	top: 4px;
+	left: 10px;
+	font-size: 12px;
+	cursor: pointer;
+}
+.vokal-datepicker .month-next { left: auto; right: 10px; }
+.vokal-datepicker .filler-space,
+.vokal-datepicker .day-name-cell,
+.vokal-datepicker .date-cell {
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin: 0px 2px 2px 0px;
+	border: 1px solid #FFFFFF;
+	text-align: center;
+	line-height: 20px;
+	font-size: 12px;
+	cursor: default;
+}
+.vokal-datepicker .day-name-cell { color: #AAAAAA; }
+.vokal-datepicker .date-cell { border: 1px solid #CCCCCC; cursor: pointer; }
+.vokal-datepicker .date-cell.today {
+	border: 1px solid #AAAAAA;
+	background-color: #EEEEEE;
+	color: #666666;
+}
+.vokal-datepicker .date-cell:hover { background-color: #EEEEEE; }
+
+/*	BigVideo Styles 
+	You may need to adjust these styles to get this working right in your design. 
+*/
+#big-video-wrap{overflow:hidden;position:fixed;height:100%;width:100%;top:0;left:0;}
+#big-video-vid,#big-video-image{position:absolute;}
+#big-video-control-container{position:fixed;bottom:0;padding:10px;width:100%;background:rgba(0,0,0,.25);
+  -webkit-transition-duration:0.6s;-moz-transition-duration:0.6s;-ms-transition-duration:0.6s;-o-transition-duration:0.6s;transition-duration:0.6s;}
+#big-video-control{width:100%;height:16px;position:relative;}
+#big-video-control-middle{margin: 0 56px 0 24px;}
+#big-video-control-bar{width:100%;height:16px;position:relative;cursor:pointer;}
+#big-video-control-progress{position:absolute;top:7px;height:3px;width:0%;background:#fff;}
+#big-video-control-track{position:absolute;top:8px;height:1px;width:100%;background:#fff;}
+#big-video-control-bound-left{left:0;}
+#big-video-control-bound-right{right:-1px}
+#big-video-control-track .ui-slider-handle {opacity:0;}
+#big-video-control-playhead{left:30%;}
+#big-video-control-play{position:absolute;top:0;left:0;height:16px;width:16px;background-image:url('bigvideo.png');}
+#big-video-control-timer{position:absolute;top:1px;right:0;color:#fff;font-size:11px;}
+#big-video-control-playhead,#big-video-control-bound-left,#big-video-control-bound-right{position:absolute;top:0;height:16px;width:1px;background:#fff;}
+#big-video-control .ui-slider-handle{border-left:solid 1px #fff; width:16px;height:16px;position:absolute;top:-8px;}
+.transparent{-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity:0;opacity:0;}
+.vjs-big-play-button{display:none !important;}

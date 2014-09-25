@@ -1,0 +1,16 @@
+{
+  "name": "GotClocked-OSX",
+  "main": "index.html",
+  "scripts": {
+    "start": "nodewebkit"
+  },
+  "window": {
+    "toolbar": false,
+    "fullscreen": false,
+    "width": 400,
+    "height": 600
+  },
+  "devDependencies": {
+    "moment": "^2.8.3"
+  }
+}

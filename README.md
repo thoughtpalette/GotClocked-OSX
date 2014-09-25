@@ -1,4 +1,4 @@
-GotClocked-OSX
-==============
+GotClocked
+==========
 
-GotClocked.com Desktop app for OSX. Build with node-webkit. 
+See how much money you're burning in meetings

@@ -1,0 +1,12 @@
+default:
+  - jshint
+  - concat
+  - less:dev
+
+deploy:
+  - jshint
+  - uglify
+  - concat:jquery
+  - concat:angular
+  - concat:styles
+  - less:deploy
