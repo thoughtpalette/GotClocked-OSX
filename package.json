@@ -1,16 +1,18 @@
 {
   "name": "GotClocked-OSX",
+  "version": "0.1",
   "main": "index.html",
   "scripts": {
     "start": "nodewebkit"
   },
   "window": {
-    "toolbar": false,
+    "toolbar": true,
     "fullscreen": false,
     "width": 400,
     "height": 600
   },
   "devDependencies": {
+    "grunt-node-webkit-builder": "^0.2.3",
     "moment": "^2.8.3"
   }
 }
